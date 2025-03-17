@@ -3,17 +3,17 @@ import csv
 
 def create_connection():
     return mysql.connector.connect(
-        host = "localhost",
-        user = "root",
-        passwd = "Velkommen25",
-        database = "orders_db"
+        host="localhost",
+        user="root",
+        passwd="Velkommen25",
+        database="orders_db"
     )
 
 def create_database():
     connection = mysql.connector.connect(
-        host = "localhost",
-        user = "root",
-        passwd = "Velkommen25"
+        host="localhost",
+        user="root",
+        passwd="Velkommen25"
     )
     cursor = connection.cursor()
     cursor.execute("CREATE DATABASE IF NOT EXISTS orders_db")
@@ -52,9 +52,9 @@ def insert_data_from_csv(csv_file_path):
 
 def drop_database():
     connection = mysql.connector.connect(
-        host = "localhost",
-        user = "root",
-        passwd = "Velkommen25"
+        host="localhost",
+        user="root",
+        passwd="Velkommen25"
     )
     cursor = connection.cursor()
     cursor.execute("DROP DATABASE IF EXISTS orders_db")
