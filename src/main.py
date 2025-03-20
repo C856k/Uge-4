@@ -8,9 +8,7 @@ def main():
     create_database()
     create_tables()
     
-    # Insert data from CSV file
-    #csv_file_path = 'c:\\Users\\spac-23\\Documents\\SpecialisterneProjektMappe\\Uge Opgaver\\uge4\\Uge-4\\Data\\orders_combined.csv'
-    
+    # Insert data from CSV files    
     insert_data_from_csv(r'Data\customers.csv', 'customers')
     insert_data_from_csv(r'Data\products.csv', 'products')
     insert_data_from_csv(r'Data\orders.csv', 'orders')
