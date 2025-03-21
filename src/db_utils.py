@@ -2,15 +2,16 @@ import mysql.connector
 import csv
 from db_config import db_config
 
+# Opretter forbindelse til databasen ved hjælp af konfigurationsvariablerne
 def create_connection():
-    return mysql.connector.connect(
-        
+    return mysql.connector.connect(  
         host = db_config['host'],
         user = db_config['user'],
         passwd = db_config['passwd'],
         database = db_config['db']
     )
 
+# Opretter databasen hvis ikke den eksisterer
 def create_database():
     connection = mysql.connector.connect(
         host = db_config['host'],
@@ -22,6 +23,7 @@ def create_database():
     cursor.close()
     connection.close()
 
+# Opretter tabellerne i databasen
 def create_tables():
     connection = create_connection()
     cursor = connection.cursor()
@@ -91,7 +93,7 @@ def insert_data_from_csv(csv_file_path, table_name):
     # Lukker cursor og forbindelsen
     cursor.close()
     connection.close()
-
+# Sletter databasen hvis den eksisterer
 def drop_database():
     connection = mysql.connector.connect(
         host = db_config['host'],
